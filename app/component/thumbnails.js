@@ -1,8 +1,6 @@
-export class Thumbnails {
-    constructor(domElt) {
-        this.root = domElt;
-    }
+import {Component} from "./component.js";
 
+export class Thumbnails extends Component {
     init() {
         this.root.innerHTML = 'Miniatures';
     }

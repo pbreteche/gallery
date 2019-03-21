@@ -1,20 +1,19 @@
 import {Viewer} from "./component/viewer.js";
 import {Thumbnails} from "./component/thumbnails.js";
+import {Component} from "./component/component.js";
 
-export class Gallery {
-    constructor(domElt) {
-        this.root = domElt;
-    }
-
+export class Gallery extends Component {
     init() {
         this.root.innerHTML = `
 <h1>Ma super galerie!</h1>
 <div class="component viewer-component"></div>
 <div class="component thumbnails-component"></div>
 `;
-        const viewer = new Viewer(this.root.querySelector('.viewer-component'));
+        const viewerElt = this.root.querySelector('.viewer-component');
+        const viewer = new Viewer(viewerElt);
         viewer.init();
-        const thumbnails = new Thumbnails(this.root.querySelector('.thumbnails-component'));
+        const thumbnailsElt = this.root.querySelector('.thumbnails-component');
+        const thumbnails = new Thumbnails(thumbnailsElt);
         thumbnails.init();
     }
 }

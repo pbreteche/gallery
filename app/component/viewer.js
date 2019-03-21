@@ -1,8 +1,6 @@
-export class Viewer {
-    constructor(domElt) {
-        this.root = domElt;
-    }
+import {Component} from "./component.js";
 
+export class Viewer  extends Component {
     init() {
         this.root.innerHTML = 'Visionneuse';
     }
