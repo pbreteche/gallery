@@ -1,0 +1,13 @@
+.thumbnails-component ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.thumbnails-component img {
+    height: 10em;
+    box-shadow: 0 0 .5em black;
+}
