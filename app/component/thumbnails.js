@@ -1,9 +1,13 @@
 import {Component} from "./component.js";
-import {IMAGE_LIST} from "../image-list.js";
+import {ImageListXhr} from "../image-list-xhr.js";
 
 export class Thumbnails extends Component {
     init() {
-        this.root.innerHTML = Thumbnails.displayList(IMAGE_LIST);
+        const imageListXhr = new ImageListXhr();
+        imageListXhr.getList((responseData) => {
+            this.root.innerHTML = Thumbnails.displayList(responseData);
+        });
+        this.root.innerHTML = '<p>Chargement des miniatures</p>'
     }
 
     static displayList(list) {
